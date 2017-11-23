@@ -5,3 +5,6 @@ A solaris 11 AI install profile that's based off the official *solaris-minimal-s
 
 ```package-trim.sh```
 Remove unused drivers. Specifically video drivers, Fibre Channel, Infiniband, and all ethernet drivers that are NOT e1000x cards. 
+
+```f20-card-tweak.sh```
+Tune flushing for SSD Cards. 
