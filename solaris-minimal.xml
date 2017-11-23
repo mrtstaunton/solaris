@@ -1,0 +1,79 @@
+<!DOCTYPE auto_install PUBLIC "SYSTEM" "/usr/share/install/ai.dtd.1">
+<auto_install>
+    <ai_instance name="default" auto_reboot="false">
+ <target>
+            <disk in_zpool="rootpool" in_vdev="mirrored" whole_disk="true">
+                <disk_name name="c3t0d0" name_type="ctd"/>
+            </disk>
+            <disk in_zpool="rootpool" in_vdev="mirrored" whole_disk="true">
+                <disk_name name="c3t3d0" name_type="ctd"/>
+            </disk>
+            <logical noswap="true" nodump="true">
+                <zpool name="rootpool" action="create" is_root="true">
+                    <vdev name="mirrored" redundancy="mirror"/>
+                    <be name="solaris"/>
+                </zpool>
+            </logical>
+        </target>
+        <software type="IPS">
+            <destination>
+                <image action="create" index="false">
+                    <facet set="false">facet.locale.*</facet>
+                    <facet set="true">facet.locale.en_GB</facet>
+		    <facet set="false">facet.doc.*</facet>
+                </image>
+            </destination>
+            <source>
+                <publisher name="solaris">
+                    <origin name="http://pkg.oracle.com/solaris/release"/>
+                </publisher>
+            </source>
+            <software_data action="install">
+                <name>pkg:/entire@0.5.11-0.175.3</name>
+                <name>pkg:/group/system/solaris-minimal-server</name>
+		<name>pkg:/system/management/facter</name>
+		<name>pkg:/system/management/fwupdate</name>
+		<name>pkg:/system/management/ilomconfig</name>
+		<name>pkg:/developer/build/cmake</name>
+		<name>pkg:/developer/build/gnu-make</name>
+		<name>pkg:/developer/icu</name>
+		<name>pkg:/developer/versioning/git</name>
+		<name>pkg:/diagnostic/powertop</name>
+		<name>pkg:/diagnostic/top</name>
+		<name>pkg:/library/icu</name>
+		<name>pkg:/library/pcre</name>
+		<name>pkg:/library/perl-5/net-ssleay</name>
+		<name>pkg:/library/pth</name>
+		<name>pkg:/library/zlib</name>
+		<name>pkg:/network/ipfilter</name>
+		<name>pkg:/security/sudo</name>
+		<name>pkg:/system/header</name>
+		<!-- DO NOT NEED THESE IF WE REQUIRE studio-runtime
+		<name>pkg:/system/library/math</name>
+		<name>pkg:/system/library/mmheap</name>
+		<name>pkg:/system/library/openmp</name>
+		-->
+		<name>pkg:/system/library/studio-runtime</name>
+		<name>pkg:/developer/assembler</name>
+		<name>pkg:/system/linker</name>
+		<name>pkg:/system/library/iconv/utf-8</name>
+		<name>pkg:/system/library/iconv/unicode</name>
+		<name>pkg:/system/locale</name>        
+		<name>pkg:/web/wget</name>
+		<name>pkg:/image/library/libpng</name>
+		<name>pkg:/image/library/libjpeg</name>
+		<name>pkg:/library/gd</name>
+		<name>pkg:/library/libmemcached</name>
+		<name>pkg:/diagnostic/cpu-counters</name>
+		<name>pkg:/crypto/fips-140</name>
+		<name>pkg:/library/security/openssl/openssl-fips-140</name>
+		<name>pkg:/system/library/freetype-2</name>
+		<name>pkg:/compress/zip</name>
+		<name>pkg:/compress/unzip</name>
+		<name>pkg:/compress/pbzip2</name>
+		<name>pkg:/compress/pigz</name>
+		<name>pkg:/diagnostic/iftop</name>
+    </software_data>
+        </software>
+    </ai_instance>
+</auto_install>
