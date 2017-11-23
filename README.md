@@ -8,3 +8,6 @@ Remove unused drivers. Specifically video drivers, Fibre Channel, Infiniband, an
 
 ```f20-card-tweak.sh```
 Tune flushing for SSD Cards. 
+
+```disable-services.sh```
+Turn off lots of services that aren't needed. Double check before running, depending on your hardware you may *NEED* some of the services. ie. iscsi is disabled. Also, hotplugging is disabled.
