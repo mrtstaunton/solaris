@@ -1,0 +1,17 @@
+svcadm disable svc:/system/filesystem/rmvolmgr:default
+svcadm disable svc:/system/hal:default
+svcadm disable svc:/system/zones-install:default
+svcadm disable svc:/network/rpc/gss:default
+svcadm disable svc:/network/rpc/smserver:default
+svcadm disable svc:/system/filesystem/ufs/quota:default
+svcadm disable svc:/system/hotplug:default
+svcadm disable svc:/network/shares:default
+svcadm disable svc:/network/iscsi/initiator:default
+svcadm disable svc:/application/font/fc-cache:default
+svcadm disable svc:/network/ib/ib-management:default
+svcadm disable svc:/system/rad:local-http
+svcadm disable svc:/system/zones-monitoring:default
+svcadm disable svc:/platform/sun4v/drd:default
+svcadm disable svc:/system/dbus:default
+svcadm disable svc:/ldoms/agents:default
+svcadm disable svc:/network/inetd:default
