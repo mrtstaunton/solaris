@@ -37,6 +37,7 @@
 		<name>pkg:/developer/build/cmake</name>
 		<name>pkg:/developer/build/gnu-make</name>
 		<name>pkg:/developer/icu</name>
+		<name>pkg:/storage/svm</name>
 		<name>pkg:/developer/versioning/git</name>
 		<name>pkg:/diagnostic/powertop</name>
 		<name>pkg:/diagnostic/top</name>
