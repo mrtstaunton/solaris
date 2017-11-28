@@ -35,7 +35,6 @@
 		<name>pkg:/developer/icu</name>
 		<name>pkg:/storage/svm</name>
 		<name>pkg:/developer/versioning/git</name>
-		<name>pkg:/diagnostic/powertop</name>
 		<name>pkg:/diagnostic/top</name>
 		<name>pkg:/library/icu</name>
 		<name>pkg:/library/pcre</name>
@@ -61,7 +60,7 @@
 		<name>pkg:/image/library/libjpeg</name>
 		<name>pkg:/library/gd</name>
 		<name>pkg:/library/libmemcached</name>
-		<name>pkg:/diagnostic/cpu-counters</name>
+		<name>pkg:/text/gnu-grep</name>
 		<name>pkg:/crypto/fips-140</name>
 		<name>pkg:/library/security/openssl/openssl-fips-140</name>
 		<name>pkg:/system/library/freetype-2</name>
