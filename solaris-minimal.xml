@@ -1,16 +1,12 @@
 <!DOCTYPE auto_install PUBLIC "SYSTEM" "/usr/share/install/ai.dtd.1">
 <auto_install>
-    <ai_instance name="default" auto_reboot="false">
+    <ai_instance name="default" auto_reboot="true">
  <target>
-            <disk in_zpool="rootpool" in_vdev="mirrored" whole_disk="true">
+            <disk in_zpool="rootpool" whole_disk="true">
                 <disk_name name="c3t0d0" name_type="ctd"/>
-            </disk>
-            <disk in_zpool="rootpool" in_vdev="mirrored" whole_disk="true">
-                <disk_name name="c3t3d0" name_type="ctd"/>
             </disk>
             <logical noswap="true" nodump="true">
                 <zpool name="rootpool" action="create" is_root="true">
-                    <vdev name="mirrored" redundancy="mirror"/>
                     <be name="solaris"/>
                 </zpool>
             </logical>
