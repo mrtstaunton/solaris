@@ -3,7 +3,7 @@
     <ai_instance name="default" auto_reboot="true">
  <target>
             <disk in_zpool="rootpool" whole_disk="true">
-                <disk_name name="c3t0d0" name_type="ctd"/>
+                <disk_name name="c1t0d0" name_type="ctd"/>
             </disk>
             <logical noswap="true" nodump="true">
                 <zpool name="rootpool" action="create" is_root="true">
@@ -25,7 +25,7 @@
                 </publisher>
             </source>
             <software_data action="install">
-                <name>pkg:/entire@0.5.11-0.175.3</name>
+                <name>pkg:/entire</name>
                 <name>pkg:/group/system/solaris-minimal-server</name>
 		<name>pkg:/system/management/facter</name>
 		<name>pkg:/system/management/fwupdate</name>
