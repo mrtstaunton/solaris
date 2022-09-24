@@ -69,6 +69,7 @@
 		<name>pkg:/compress/pbzip2</name>
 		<name>pkg:/compress/pigz</name>
 		<name>pkg:/diagnostic/iftop</name>
+		<name>pkg:/system/storage/raid-utilities</name>
     </software_data>
         </software>
     </ai_instance>
