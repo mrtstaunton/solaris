@@ -1,0 +1,81 @@
+<!DOCTYPE auto_install PUBLIC "SYSTEM" "/usr/share/install/ai.dtd.1">
+<auto_install>
+    <ai_instance name="default" auto_reboot="true">
+ <target>
+            <disk in_zpool="rootpool" whole_disk="true">
+                <disk_name name="c1t0d0" name_type="ctd"/>
+            </disk>
+            <logical noswap="true" nodump="true">
+                <zpool name="rootpool" action="create" is_root="true">
+		    <filesystem name="export" mountpoint="/export"/>
+                    <filesystem name="export/home"/>
+                    <be name="solaris"/>
+                </zpool>
+            </logical>
+        </target>
+        <software type="IPS">
+            <destination>
+                <image action="create" index="false">
+                    <facet set="false">facet.locale.*</facet>
+                    <facet set="true">facet.locale.en_GB</facet>
+		    <facet set="false">facet.doc.*</facet>
+                </image>
+            </destination>
+            <source>
+                <publisher name="solaris">
+                    <origin name="http://pkg.oracle.com/solaris/release"/>
+                </publisher>
+            </source>
+            <software_data action="install">
+                <name>pkg:/entire</name>
+                <name>pkg:/group/system/solaris-minimal-server</name>
+		<name>pkg:/security/sudo</name>
+		<name>pkg:/system/storage/raid-utilities</name>
+            </software_data>
+            <software_data action="uninstall">
+                <name>driver/fc/emlxs</name>
+                <name>driver/fc/qlc</name>
+                <name>driver/infiniband/connectx</name>
+                <name>driver/network/ethernet/bge</name>
+                <name>driver/network/ethernet/bnx</name>
+                <name>driver/network/ethernet/bnxe</name>
+                <name>driver/network/ethernet/cxge</name>
+                <name>driver/network/ethernet/i40e</name>
+                <name>driver/network/ethernet/igb</name>
+                <name>driver/network/ethernet/ixgb</name>
+                <name>driver/network/ethernet/nxge</name>
+                <name>driver/network/ethernet/oce</name>
+                <name>driver/network/ethernet/qlcnic</name>
+                <name>driver/network/ethernet/rge</name>
+                <name>driver/network/ethernet/sxge</name>
+                <name>driver/network/ethernet/usbecm</name>
+                <name>driver/network/ethernet/bnxt</name>
+                <name>driver/network/ethernet/ixgbe</name>
+                <name>driver/network/ethernet/mlxne</name>
+                <name>driver/network/ethernet/nge</name>
+                <name>driver/network/ethernet/ntxn</name>
+                <name>driver/network/ethernet/qede</name>
+                <name>driver/network/ethernet/vtionet</name>
+                <name>system/io/fc/fc-port</name>
+                <name>system/io/fc/fc-san-management</name>
+                <name>system/io/fc/fc-scsi</name>
+                <name>system/io/fc/ip-over-fc</name>
+                <name>system/storage/fcoe/fcoe-initiator</name>
+                <name>system/storage/fcoe</name>
+                <name>system/library/storage/libfcoe</name>
+                <name>system/io/infiniband/ethernet-over-ib</name>
+                <name>system/io/infiniband/ib-device-mgt-agent</name>
+                <name>system/io/infiniband/ib-sockets-direct</name>
+                <name>system/io/infiniband/ip-over-ib</name>
+                <name>system/io/infiniband/rpc-over-rdma</name>
+                <name>system/io/infiniband/open-fabrics</name>
+                <name>system/io/infiniband/reliable-datagram-sockets-v3</name>
+                <name>system/io/infiniband</name>
+                <name>system/storage/iscsi/iscsi-iser</name>
+                <name>system/storage/iscsi/iscsi-initiator</name>
+                <name>driver/storage/aac</name>
+                <name>driver/storage/cpqary3</name>
+            </software_data>
+        </software>
+    </ai_instance>
+</auto_install>
